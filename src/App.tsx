@@ -1,5 +1,5 @@
 import './App.css';
-import styled from 'styled-components';
+import styled, {keyframes} from 'styled-components';
 import React from 'react';
 
 
@@ -22,6 +22,22 @@ function App() {
             </Header>
             <Block>
                 <Title>Accessibility</Title>
+                <Form>
+                    <div>
+                        <Label htmlFor="1">Label for field 1</Label>
+                        <Field id="1" placeholder="Field 1"/>
+                    </div>
+
+                    <div>
+                        <Label htmlFor="2">Label for field 2</Label>
+                        <Field id="2" placeholder="Field 2"/>
+                    </div>
+
+                    <div>
+                        <Label htmlFor="3">Label for field 3</Label>
+                        <Field id="3" placeholder="Field 3"/>
+                    </div>
+                </Form>
             </Block>
         </div>
     );
@@ -29,10 +45,17 @@ function App() {
 
 export default App;
 
+
+const Bouncing = keyframes`
+  50% {
+    transform: translateY(20%);
+`
+
 const Title = styled.div`
   font-size: 1.5em;
   text-align: center;
   margin: 60px 0;
+  animation: ${Bouncing} 1s linear infinite alternate;
 `;
 
 const Header = styled.div`
@@ -43,8 +66,14 @@ const Header = styled.div`
   align-items: center;
 `;
 
-const Block = styled.div`
-   flex-grow: 1;
+const Menu = styled.div`
+  display: flex;
+  gap: 15px;
+`;
+
+const MenuItem = styled.li`
+  color: white;
+  font-weight: bold;
 `;
 
 const LoginBtn = styled.div`
@@ -55,15 +84,32 @@ const LoginBtn = styled.div`
   border-radius: 5px;
 `;
 
-const Menu = styled.div`
+const Block = styled.div`
+  flex-grow: 1;
   display: flex;
-  gap: 15px
+  flex-direction: column;
+  align-items: center;
 `;
 
-const MenuItem = styled.div`
-  color: white;
-  font-weight: bold;
+const Form = styled.div`
+  width: 100%;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
 `;
+
+const Label = styled.label`
+  font-size: 1rem;
+  line-height: 2rem;
+`;
+
+const Field = styled.input`
+  padding: 5px 15px;
+  width: 100%;
+  font-size: 1rem;
+`;
+
 
 
 
