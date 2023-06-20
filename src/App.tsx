@@ -71,7 +71,7 @@ const Menu = styled.div`
   gap: 15px;
 `;
 
-const MenuItem = styled.li`
+const MenuItem = styled.div`
   color: white;
   font-weight: bold;
 `;
