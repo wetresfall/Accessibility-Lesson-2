@@ -1,6 +1,5 @@
 import './App.css';
 import styled, {keyframes} from 'styled-components';
-import React from 'react';
 
 
 const Navigation = () => {
@@ -49,6 +48,7 @@ export default App;
 const Bouncing = keyframes`
   50% {
     transform: translateY(20%);
+  }  
 `
 
 const Title = styled.div`
